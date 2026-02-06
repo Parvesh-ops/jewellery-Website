@@ -1,30 +1,33 @@
 import { NavLink } from "react-router-dom";
-import { MapPin, Phone, Mail} from "lucide-react";
-import { FaFacebook, FaInstagram, FaTiktok } from "react-icons/fa6";
+import { MapPin, Phone, Mail, } from "lucide-react";
+import { FaFacebook, FaInstagram, FaTiktok, } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 pt-14">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="bg-[#0f0f0f] text-gray-300 pt-16">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
 
-        {/* Brand Info */}
+        {/* Brand Story */}
         <div>
-          <h2 className="text-2xl font-bold text-white">
+          <h2 className="text-2xl font-bold text-white tracking-wide">
             Binod <span className="text-yellow-500">Jewellers</span>
           </h2>
           <p className="mt-4 text-sm leading-relaxed">
-            Binod Jewellers offers premium gold, diamond, silver, and platinum
-            jewellery crafted with elegance, purity, and trust for every
-            occasion.
+            Trusted Nepali jewellery brand offering certified gold, diamond,
+            silver, and platinum jewellery. Serving families with purity,
+            craftsmanship, and tradition for generations.
+          </p>
+          <p className="mt-3 text-sm text-yellow-500">
+            Since 2058
           </p>
         </div>
 
-        {/* Quick Links */}
+        {/* Useful Links */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">
-            Quick Links
+            Useful Links
           </h3>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-3 text-sm">
             <li>
               <NavLink to="/" className="hover:text-yellow-500 transition">
                 Home
@@ -32,12 +35,12 @@ const Footer = () => {
             </li>
             <li>
               <NavLink to="/products" className="hover:text-yellow-500 transition">
-                Products
+                Gold Jewellery
               </NavLink>
             </li>
             <li>
-              <NavLink to="/collections" className="hover:text-yellow-500 transition">
-                Collections
+              <NavLink to="/products" className="hover:text-yellow-500 transition">
+                Diamond Jewellery
               </NavLink>
             </li>
             <li>
@@ -47,21 +50,21 @@ const Footer = () => {
             </li>
             <li>
               <NavLink to="/contact" className="hover:text-yellow-500 transition">
-                Contact
+                Visit Our Store
               </NavLink>
             </li>
           </ul>
         </div>
 
-        {/* Contact Info */}
+        {/* Store Info */}
         <div>
           <h3 className="text-lg font-semibold text-white mb-4">
-            Contact Us
+            Our Store
           </h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-start gap-2">
               <MapPin size={18} className="text-yellow-500 mt-0.5" />
-              <span>Gramthan-6,Netachowk,Morang</span>
+              <span>Gramthan-6, Netachowk, Morang</span>
             </li>
             <li className="flex items-center gap-2">
               <Phone size={18} className="text-yellow-500" />
@@ -69,32 +72,40 @@ const Footer = () => {
             </li>
             <li className="flex items-center gap-2">
               <Mail size={18} className="text-yellow-500" />
-              <span>info@binodjewellers.com</span>
+              <span>binodjewellers@gmail.com</span>
             </li>
           </ul>
+
+          <div className="bg-[#1a1a1a] mt-5 p-4 rounded-2xl text-sm">
+            <p className="text-white font-semibold mb-1">Gold Rate Updated Daily</p>
+            <p className="text-gray-400 font-sans">
+              Visit store for today's live gold & silver price
+            </p>
+          </div>
         </div>
 
-        {/* Social & Newsletter */}
+        {/* Social Proof */}
         <div>
-          <h3 className="text-lg font-semibold text-white mb-4">
-            Follow Us
+          <h3 className="text-lg text-c font-semibold text-white mb-4">
+            Connect With Us
           </h3>
-          <div className="flex gap-4 mb-5">
+
+          <div className="flex gap-4 mb-6">
             <a
               href="#"
-              className="p-2 bg-gray-800 rounded-full hover:bg-yellow-500 hover:text-gray-900 transition"
+              className="p-3 bg-[#1a1a1a] rounded-full hover:bg-yellow-500 hover:text-black transition"
             >
-              <FaFacebook  size={18} />
+              <FaFacebook size={18} />
             </a>
             <a
               href="#"
-              className="p-2 bg-gray-800 rounded-full hover:bg-yellow-500 hover:text-gray-900 transition"
+              className="p-3 bg-[#1a1a1a] rounded-full hover:bg-yellow-500 hover:text-black transition"
             >
               <FaInstagram size={18} />
             </a>
             <a
               href="#"
-              className="p-2 bg-gray-800 rounded-full hover:bg-yellow-500 hover:text-gray-900 transition"
+              className="p-3 bg-[#1a1a1a] rounded-full hover:bg-yellow-500 hover:text-black transition"
             >
               <FaTiktok size={18} />
             </a>
@@ -105,7 +116,7 @@ const Footer = () => {
             <input
               type="email"
               placeholder="Your email"
-              className="w-full px-3 py-2 text-sm rounded-l-md focus:outline-none bg-white text-black"
+              className="w-full px-3 py-2 text-sm rounded-l-md focus:outline-none bg-white text-gray-900"
             />
             <button className="bg-yellow-500 px-4 rounded-r-md text-sm font-semibold text-gray-900 hover:bg-yellow-600 transition">
               Send
@@ -114,9 +125,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800 mt-10 py-4 text-center text-sm text-gray-400">
-        © {new Date().getFullYear()} Binod Jewellers. All Rights Reserved.
+      {/* Bottom Trust Bar */}
+      <div className="border-t border-[#1f1f1f] mt-14 py-5 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} Binod Jewellers • Trusted Nepali Jewellery Brand
       </div>
     </footer>
   );
