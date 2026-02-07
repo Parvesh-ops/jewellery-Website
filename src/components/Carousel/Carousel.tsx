@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import type { CSSProperties } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Arrow component props interface for custom arrows
 interface ArrowProps {
@@ -15,6 +16,7 @@ interface ArrowProps {
 
 const Carousel = () => {
     const { data } = useData();
+    const navigate = useNavigate();
 
     if (!data) {
         return <p>Loading...</p>
@@ -104,9 +106,9 @@ const Carousel = () => {
                                 </p>
 
                                 <button
-
+                                onClick={()=> navigate('/products')}
                                     className="bg-yellow-500 text-white px-5 py-2 rounded-md 
-                             hover:bg-yellow-600 transition cursor-pointer">
+                                     hover:bg-yellow-600 transition cursor-pointer">
                                     Shop Now
                                 </button>
                             </div>
