@@ -29,9 +29,9 @@ const Carousel = () => {
                 onClick={onClick}
                 className="absolute top-1/2 -translate-y-1/2 
                  right-3 sm:right-5 z-10 
-                 bg-red-500 text-white 
+                 bg-yellow-500 text-white 
                  p-2 rounded-full shadow-md 
-                 hover:bg-red-600 transition"
+                 hover:bg-yellow-600 transition"
             >
                 <AiOutlineArrowRight size={22} />
             </button>
@@ -45,9 +45,9 @@ const Carousel = () => {
                 onClick={onClick}
                 className="absolute top-1/2 -translate-y-1/2 
                  left-3 sm:left-5 z-10 
-                 bg-red-500 text-white 
+                 bg-yellow-500 text-white 
                  p-2 rounded-full shadow-md 
-                 hover:bg-red-600 transition"
+                 hover:bg-yellow-600 transition"
             >
                 <AiOutlineArrowLeft size={22} />
             </button>
@@ -81,7 +81,7 @@ const Carousel = () => {
                 {data?.slice(0, 7).map((item) => (
                     <div
                         key={item.id}
-                        className="bg-linear-to-r from-[#0f0c29] via-[#302b63] to-[#24243e]"
+                        className="bg-linear-to-r from-[#0f0c29] via-[#44632b] to-[#0e854a]"
                     >
                         <div className="flex flex-col md:flex-row gap-4 md:gap-10 
                       justify-center items-center 
@@ -90,7 +90,7 @@ const Carousel = () => {
 
                             {/* Text Section */}
                             <div className="space-y-4 md:space-y-6 max-w-xl">
-                                <h3 className="text-red-500 font-semibold text-xs sm:text-sm md:text-base">
+                                <h3 className="text-yellow-500 font-semibold text-xs sm:text-sm md:text-base">
                                     Powering Your World with the Best in Jwellers
                                 </h3>
 
@@ -105,8 +105,8 @@ const Carousel = () => {
 
                                 <button
 
-                                    className="bg-red-500 text-white px-5 py-2 rounded-md 
-                             hover:bg-red-600 transition cursor-pointer">
+                                    className="bg-yellow-500 text-white px-5 py-2 rounded-md 
+                             hover:bg-yellow-600 transition cursor-pointer">
                                     Shop Now
                                 </button>
                             </div>
@@ -116,7 +116,7 @@ const Carousel = () => {
                                 <img
                                     src={item.image}
                                     alt={item.name}
-                                    className="rounded-full w-64 sm:w-72 md:w-80 lg:w-96 hover:scale-105 transition-all duration-300 shadow-2xl shadow-red-400"
+                                    className="rounded-full w-64 sm:w-72 md:w-80 lg:w-96 hover:scale-105 transition-all duration-300 shadow-2xl shadow-yellow-400"
                                 />
                             </div>
                         </div>

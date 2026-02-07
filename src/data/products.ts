@@ -7,7 +7,7 @@ export const products: Product[] = [
     price: "NPR 120,000",
     category: "Necklace",
     type: "Gold",
-    image: "/images/necklace1.jpg",
+    image: "https://shrishyamjewellers.in/wp-content/uploads/2025/06/Necklace1-1.png",
     description:
       "An elegant 22K handcrafted gold necklace designed for weddings and special occasions. Features a timeless design with fine detailing and premium finishing.",
     rating: 4.8,
@@ -22,7 +22,7 @@ export const products: Product[] = [
     price: "NPR 85,000",
     category: "Chain",
     type: "Gold",
-    image: "/images/chain1.jpg",
+    image: "https://medleyjewellery.com.au/cdn/shop/files/classic-curb-chain-necklace-in-gold-medley-jewellery-necklace-41227213111526_1800x1800.jpg?v=1724214176",
     description:
       "A lightweight yet durable gold chain made from pure 22K gold. Ideal for daily wear and pairs beautifully with pendants.",
     rating: 4.5,
@@ -36,7 +36,7 @@ export const products: Product[] = [
     price: "NPR 150,000",
     category: "Earrings",
     type: "Diamond",
-    image: "/images/earring1.jpg",
+    image: "https://uncommonjames.com/cdn/shop/files/J18E-MAKEITSHINE-GOLD-1.jpg?v=1752676156&width=1946",
     description:
       "Premium diamond stud earrings crafted with precision. Perfect for formal events and everyday elegance with a sparkling finish.",
     rating: 5,
@@ -51,7 +51,7 @@ export const products: Product[] = [
     price: "NPR 200,000",
     category: "Bangle",
     type: "Gold",
-    image: "/images/bangle1.jpg",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV28p9tynDKZRkSmjtj2Ot-gwIG_ACNaBzSQ&s",
     description:
       "A pair of traditional 22K gold bangles inspired by Nepali cultural designs. Ideal for weddings and festive celebrations.",
     rating: 4.7,
@@ -65,7 +65,7 @@ export const products: Product[] = [
     price: "NPR 18,000",
     category: "Anklet",
     type: "Silver",
-    image: "/images/anklet1.jpg",
+    image: "https://www.matapayals.com/cdn/shop/files/Anklet_4.jpg?v=1749906922&width=720",
     description:
       "Beautifully crafted silver anklets with delicate patterns. Lightweight, comfortable, and perfect for everyday ethnic wear.",
     rating: 4.3,
@@ -79,7 +79,7 @@ export const products: Product[] = [
     price: "NPR 320,000",
     category: "Ring",
     type: "Platinum",
-    image: "/images/ring1.jpg",
+    image: "https://www.rockher.com/cdn/shop/articles/Gold_vs_Platinum_Engagement_Ring__Which_to_Choose_520x500_194d945f-29bb-4fac-afda-b04c707bc76d_1200x630.jpg?v=1736975479",
     description:
       "A luxurious platinum engagement ring designed for lasting brilliance. Features a sleek modern design with superior durability.",
     rating: 4.9,
@@ -93,7 +93,7 @@ export const products: Product[] = [
     price: "NPR 65,000",
     category: "Pendant",
     type: "Gold",
-    image: "/images/pendant1.jpg",
+    image: "https://static.wixstatic.com/media/980b5c_a4274e78511a431fa2d607f30c678aab~mv2.jpg/v1/fill/w_480,h_534,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/980b5c_a4274e78511a431fa2d607f30c678aab~mv2.jpg",
     description:
       "A minimalistic gold pendant paired with a matching chain. Perfect for daily wear and gifting purposes.",
     rating: 4.4,
