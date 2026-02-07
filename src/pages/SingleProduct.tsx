@@ -40,7 +40,7 @@ const SingleProduct = () => {
 
     return (
         <div className="px-4 sm:px-6 md:px-0 pb-8">
-            <Breadcrums name = {singleProduct.name} />
+            <Breadcrums name={singleProduct.name} />
 
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
                 {/* IMAGE */}
@@ -70,12 +70,15 @@ const SingleProduct = () => {
                     <div className="flex items-center gap-2 mt-2">
                         <div className="text-yellow-400 text-lg">
                             {"★".repeat(Math.round(singleProduct.rating))}
+                            <span className="text-gray-300">
+                                {"★".repeat(5 - Math.round(singleProduct.rating))}
+                            </span>
                         </div>
                     </div>
 
                     {/* PRICE */}
                     <p className="text-2xl font-bold text-yellow-500 mt-2">
-                        {singleProduct.price}
+                        NRP {singleProduct.price}
                     </p>
 
                     {/* DESCRIPTION */}

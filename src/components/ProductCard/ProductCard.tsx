@@ -29,7 +29,7 @@ const ProductCard = ({ product }: ProductProps) => {
                 </h3>
 
                 <p className="text-yellow-600 font-bold mb-3">
-                    {product.price.toLocaleString()}
+                    NRP {product.price.toLocaleString()}
                 </p>
 
                 {/* Actions */}

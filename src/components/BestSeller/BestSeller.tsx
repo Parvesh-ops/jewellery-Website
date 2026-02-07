@@ -4,9 +4,11 @@ import { GrFavorite } from "react-icons/gr";
 import { IoCartOutline } from "react-icons/io5";
 import { useData } from "../../context/DataContext";
 import { HiArrowNarrowRight } from "react-icons/hi";
+import { useCart } from "../../context/CartContext";
 
 const BestSeller = () => {
     const { data } = useData();
+    const { addToCart } = useCart();
 
     const bestSellers = data.slice(0, 4);
 
@@ -48,12 +50,13 @@ const BestSeller = () => {
                                 </h3>
 
                                 <p className="text-yellow-600 font-bold mb-3">
-                                    {product.price.toLocaleString()}
+                                    NRP {product.price.toLocaleString()}
                                 </p>
 
                                 {/* Actions */}
                                 <div className="flex items-center justify-between">
                                     <button
+                                    onClick={()=> addToCart(product)}
                                         className="flex items-center gap-2 text-sm bg-yellow-500 text-black px-3 py-1.5 rounded-full hover:bg-yellow-600 transition"
                                     >
                                         <IoCartOutline />
