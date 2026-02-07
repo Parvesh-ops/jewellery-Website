@@ -11,15 +11,15 @@ const Header = () => {
     `block px-4 py-2 text-sm font-semibold transition-colors duration-200
      ${isActive
       ? "text-yellow-500 md:border-b-2 md:border-yellow-500"
-      : "text-white hover:text-yellow-500"
+      : "text-black hover:text-yellow-500"
     }`;
 
   return (
-    <nav className="w-full bg-[#0f0f0f] sticky top-0 z-50 shadow-md">
+    <nav className="w-full bg-[#ffffff] sticky top-0 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
-        <NavLink to="/" className="text-2xl font-bold text-white tracking-wide">
+        <NavLink to="/" className="text-2xl font-bold text-black tracking-wide">
           Binod <span className="text-yellow-500">Jewellers</span>
         </NavLink>
 
@@ -32,17 +32,17 @@ const Header = () => {
           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
 
           {/* Favorite */}
-          <Link to="/favorite" className="relative text-white hover:text-yellow-500">
+          <Link to="/favorite" className="relative text-black hover:text-yellow-500">
             <GrFavorite className="h-6 w-6" />
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">
+            <span className="absolute -top-2 -right-2 bg-red-500 text-black text-xs px-1.5 rounded-full">
               0
             </span>
           </Link>
 
           {/* Cart */}
-          <Link to="/cart" className="relative text-white hover:text-yellow-500">
+          <Link to="/cart" className="relative text-black hover:text-yellow-500">
             <IoCartOutline className="h-6 w-6" />
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-1.5 rounded-full">
+            <span className="absolute -top-2 -right-2 bg-red-500 text-black text-xs px-1.5 rounded-full">
               0
             </span>
           </Link>
@@ -58,7 +58,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-white"
+          className="md:hidden text-black"
           onClick={() => setOpen(!open)}
         >
           {open ? <X size={28} /> : <Menu size={28} />}
@@ -85,11 +85,11 @@ const Header = () => {
           <Link
             to="/favorite"
             onClick={() => setOpen(false)}
-            className="relative text-white hover:text-yellow-500 flex items-center gap-2"
+            className="relative text-black hover:text-yellow-500 flex items-center gap-2"
           >
             <GrFavorite className="h-6 w-6" />
             <span className="text-sm font-medium">Favorite</span>
-            <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs px-1.5 rounded-full">
+            <span className="absolute -top-2 -right-3 bg-red-500 text-black text-xs px-1.5 rounded-full">
               0
             </span>
           </Link>
@@ -98,11 +98,11 @@ const Header = () => {
           <Link
             to="/cart"
             onClick={() => setOpen(false)}
-            className="relative text-white hover:text-yellow-500 flex items-center gap-2"
+            className="relative text-black hover:text-yellow-500 flex items-center gap-2"
           >
             <IoCartOutline className="h-6 w-6" />
             <span className="text-sm font-medium">Cart</span>
-            <span className="absolute -top-2 -right-3 bg-red-500 text-white text-xs px-1.5 rounded-full">
+            <span className="absolute -top-2 -right-3 bg-red-500 text-black text-xs px-1.5 rounded-full">
               0
             </span>
           </Link>
