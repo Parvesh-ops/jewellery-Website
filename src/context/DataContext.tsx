@@ -6,6 +6,7 @@ interface DataContextType {
     data: Product[];
     loading: boolean;
     fetchAllProducts: () => void;
+    categories: string[];
 }
 
 const DataContext = createContext<null | DataContextType>(null)
@@ -29,8 +30,11 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
         fetchAllProducts()
     }, []);
 
+    // Extract unique categories 
+    const categories = ["All", ...new Set(data.map((item) => item.category))];
+
     return (
-        <DataContext.Provider value={{ data, loading, fetchAllProducts }}>
+        <DataContext.Provider value={{ data, loading, fetchAllProducts, categories }}>
             {children}
         </DataContext.Provider>
     )
@@ -38,10 +42,10 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
 };
 
 //custom hooks
-export const useData = ()=>{
-   const context =  useContext(DataContext)
+export const useData = () => {
+    const context = useContext(DataContext)
     if (!context) {
-    throw new Error("useCart must be used within CartProvider");
-  }
-  return context;
+        throw new Error("useCart must be used within CartProvider");
+    }
+    return context;
 };
