@@ -2,18 +2,21 @@
 import { GrFavorite } from "react-icons/gr";
 import { IoCartOutline } from "react-icons/io5";
 import type { Product } from "../../types/product";
+import { useNavigate } from "react-router-dom";
 
 interface ProductProps {
     product: Product;
 }
 
 const ProductCard = ({ product }: ProductProps) => {
+        const navigate = useNavigate() // for singleProduct
     return (
         <div className="border rounded-lg cursor-pointer border-gray-300 hover:scale-105 hover:shadow-xl transition-transform duration-300 bg-white overflow-hidden">
             {/* Image */}
             <img
                 src={product.image}
                 alt={product.name}
+                onClick={() => navigate(`/products/${product.id}`)}  // for singleProduc
                 className="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
             />
 
