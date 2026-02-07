@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import type { Product } from "../types/product";
 import { products as productData } from "../data/products";
 
@@ -35,4 +35,13 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
         </DataContext.Provider>
     )
 
-}
+};
+
+//custom hooks
+export const useData = ()=>{
+   const context =  useContext(DataContext)
+    if (!context) {
+    throw new Error("useCart must be used within CartProvider");
+  }
+  return context;
+};
