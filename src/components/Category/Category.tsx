@@ -5,9 +5,13 @@ const Category = () => {
     const { categories } = useData()
     return (
         <div className="py-8 px-4 sm:px-6 lg:px-20 backdrop-blur-md rounded-2xl mx-auto my-10 max-w-6xl">
-            <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-gray-800 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-1 text-center">
                 Shop by Category
             </h2>
+            <p className=" mb-7 text-gray-600 max-w-xl mx-auto text-center">
+                Explore our wide range of authentic Nepali jewellery crafted for every
+                tradition, celebration, and moment.
+            </p>
 
             <div className="flex flex-wrap justify-center sm:justify-around gap-4">
                 {categories?.map((category, index) => (
