@@ -30,6 +30,18 @@ const About = () => {
           <p className="text-gray-700 leading-relaxed mb-6">
             With nationwide delivery, custom designs on request, and transparent pricing, we make premium jewellery accessible and trustworthy for all Nepali families.
           </p>
+
+          <div className="flex gap-4 mt-4">
+            <span className="px-4 py-2 rounded-full bg-yellow-100 text-yellow-700 text-sm font-medium">
+               Custom Jewellery on Request
+            </span>
+            <span className="px-4 py-2 rounded-full bg-yellow-100 text-yellow-700 text-sm font-medium">
+              24*7 Support
+            </span>
+            <span className="px-4 py-2 rounded-full bg-yellow-100 text-yellow-700 text-sm font-medium">
+              Delivery All Over Nepal
+            </span>
+          </div>
         </div>
 
         {/* Highlight Card */}
@@ -46,7 +58,7 @@ const About = () => {
               <li>✔ Buy & Sell Jewellery Safely</li>
               <li>✔ Fair & Transparent Pricing</li>
               <li>✔ Secure Payment Methods</li>
-              <li>✔ 24×7 Customer Support</li>
+              <li>✔ 24*7 Customer Support</li>
               <li>✔ Delivered All Over Nepal</li>
               <li>✔ Jewellery Records Tracked with Excel & Power BI</li>
               <li>✔ Trusted by Nepali Families for Generations</li>
