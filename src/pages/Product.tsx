@@ -22,15 +22,12 @@ const Product = () => {
   const pageHandler = (selectedPage: number) => setPage(selectedPage);
 
   // Filtered products
-  const filteredData = data?.filter((item) => {
-    const priceNum = Number(item.price.replace(/[^0-9]/g, "")); 
-    return (
-      item.name.toLowerCase().includes(search.toLowerCase()) &&
-      (category === "All" || item.category === category) &&
-      priceNum >= priceRange[0] &&
-      priceNum <= priceRange[1]
-    );
-  });
+  const filteredData = data?.filter((item) => (
+    item.name.toLowerCase().includes(search.toLowerCase()) &&
+    (category === "All" || item.category === category) &&
+    item.price >= priceRange[0] &&
+    item.price <= priceRange[1]
+  ))
 
   // Total pages
   const totalPages = Math.ceil(filteredData?.length / 8);

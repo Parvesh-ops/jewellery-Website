@@ -3,13 +3,15 @@ import { GrFavorite } from "react-icons/gr";
 import { IoCartOutline } from "react-icons/io5";
 import type { Product } from "../../types/product";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../../context/CartContext";
 
 interface ProductProps {
     product: Product;
 }
 
 const ProductCard = ({ product }: ProductProps) => {
-        const navigate = useNavigate() // for singleProduct
+    const navigate = useNavigate() // for singleProduct
+    const { addToCart } = useCart()
     return (
         <div className="border rounded-lg cursor-pointer border-gray-300 hover:scale-105 hover:shadow-xl transition-transform duration-300 bg-white overflow-hidden">
             {/* Image */}
@@ -32,7 +34,9 @@ const ProductCard = ({ product }: ProductProps) => {
 
                 {/* Actions */}
                 <div className="flex items-center justify-between">
-                    <button className="flex items-center gap-2 text-sm bg-yellow-500 text-black px-3 py-1.5 rounded-full hover:bg-yellow-600 transition">
+                    <button
+                        onClick={() => addToCart(product)}
+                        className="flex items-center gap-2 text-sm bg-yellow-500 text-black px-3 py-1.5 rounded-full hover:bg-yellow-600 transition">
                         <IoCartOutline />
                         Add
                     </button>
