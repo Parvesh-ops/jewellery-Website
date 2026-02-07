@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import type { Product } from "../types/product";
 import { products as productData } from "../data/products";
 import { IoCartOutline } from "react-icons/io5";
+import Breadcrums from "../components/Breadcrums/Breadcrums";
 
 const SingleProduct = () => {
     const { id } = useParams<{ id: string }>();
@@ -39,6 +40,7 @@ const SingleProduct = () => {
 
     return (
         <div className="px-4 sm:px-6 md:px-0 pb-8">
+            <Breadcrums name = {singleProduct.name} />
 
             <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
                 {/* IMAGE */}
