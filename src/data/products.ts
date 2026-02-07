@@ -4,7 +4,7 @@ export const products: Product[] = [
   {
     id: 1,
     name: "Royal Gold Necklace",
-    price: "NPR 120,000",
+    price:  120000,
     category: "Necklace",
     type: "Gold",
     image: "https://shrishyamjewellers.in/wp-content/uploads/2025/06/Necklace1-1.png",
@@ -19,7 +19,7 @@ export const products: Product[] = [
   {
     id: 2,
     name: "Classic Gold Chain",
-    price: "NPR 85,000",
+    price:  85000,
     category: "Chain",
     type: "Gold",
     image: "https://medleyjewellery.com.au/cdn/shop/files/classic-curb-chain-necklace-in-gold-medley-jewellery-necklace-41227213111526_1800x1800.jpg?v=1724214176",
@@ -33,7 +33,7 @@ export const products: Product[] = [
   {
     id: 3,
     name: "Diamond Stud Earrings",
-    price: "NPR 150,000",
+    price:  150000,
     category: "Earrings",
     type: "Diamond",
     image: "https://uncommonjames.com/cdn/shop/files/J18E-MAKEITSHINE-GOLD-1.jpg?v=1752676156&width=1946",
@@ -48,7 +48,7 @@ export const products: Product[] = [
   {
     id: 4,
     name: "Traditional Gold Bangles",
-    price: "NPR 200,000",
+    price:  200000,
     category: "Bangle",
     type: "Gold",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV28p9tynDKZRkSmjtj2Ot-gwIG_ACNaBzSQ&s",
@@ -62,7 +62,7 @@ export const products: Product[] = [
   {
     id: 5,
     name: "Silver Anklet Set",
-    price: "NPR 18,000",
+    price:  18000,
     category: "Anklet",
     type: "Silver",
     image: "https://www.matapayals.com/cdn/shop/files/Anklet_4.jpg?v=1749906922&width=720",
@@ -76,7 +76,7 @@ export const products: Product[] = [
   {
     id: 6,
     name: "Platinum Engagement Ring",
-    price: "NPR 320,000",
+    price:  320000,
     category: "Ring",
     type: "Platinum",
     image: "https://www.rockher.com/cdn/shop/articles/Gold_vs_Platinum_Engagement_Ring__Which_to_Choose_520x500_194d945f-29bb-4fac-afda-b04c707bc76d_1200x630.jpg?v=1736975479",
@@ -90,7 +90,7 @@ export const products: Product[] = [
   {
     id: 7,
     name: "Gold Pendant with Chain",
-    price: "NPR 65,000",
+    price:  65000,
     category: "Pendant",
     type: "Gold",
     image: "https://static.wixstatic.com/media/980b5c_a4274e78511a431fa2d607f30c678aab~mv2.jpg/v1/fill/w_480,h_534,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/980b5c_a4274e78511a431fa2d607f30c678aab~mv2.jpg",
@@ -104,7 +104,7 @@ export const products: Product[] = [
   {
     id: 8,
     name: "Diamond Necklace Set",
-    price: "NPR 450,000",
+    price:  450000,
     category: "Necklace",
     type: "Diamond",
     image: "/images/necklace2.jpg",
@@ -118,7 +118,7 @@ export const products: Product[] = [
   {
     id: 9,
     name: "Silver Bracelet",
-    price: "NPR 22,000",
+    price:  22000,
     category: "Bracelet",
     type: "Silver",
     image: "/images/bracelet1.jpg",
@@ -132,7 +132,7 @@ export const products: Product[] = [
   {
     id: 10,
     name: "Gold Stud Earrings",
-    price: "NPR 55,000",
+    price:  55000,
     category: "Earrings",
     type: "Gold",
     image: "/images/earring2.jpg",
@@ -147,7 +147,7 @@ export const products: Product[] = [
   {
     id: 11,
     name: "Diamond Wedding Ring",
-    price: "NPR 280,000",
+    price:  280000,
     category: "Ring",
     type: "Diamond",
     image: "/images/ring2.jpg",
@@ -161,7 +161,7 @@ export const products: Product[] = [
   {
     id: 12,
     name: "Traditional Gold Choker",
-    price: "NPR 175,000",
+    price:  175000,
     category: "Necklace",
     type: "Gold",
     image: "/images/choker1.jpg",
@@ -175,7 +175,7 @@ export const products: Product[] = [
   {
     id: 13,
     name: "Silver Toe Rings",
-    price: "NPR 6,500",
+    price:  6500,
     category: "Toe Ring",
     type: "Silver",
     image: "/images/toering1.jpg",
@@ -189,7 +189,7 @@ export const products: Product[] = [
   {
     id: 14,
     name: "Gold Kada for Men",
-    price: "NPR 95,000",
+    price:  95000,
     category: "Kada",
     type: "Gold",
     image: "/images/kada1.jpg",
@@ -203,7 +203,7 @@ export const products: Product[] = [
   {
     id: 15,
     name: "Diamond Nose Pin",
-    price: "NPR 42,000",
+    price:  42000,
     category: "Nose Pin",
     type: "Diamond",
     image: "/images/nosepin1.jpg",
@@ -217,7 +217,7 @@ export const products: Product[] = [
   {
     id: 16,
     name: "Gold Mangalsutra",
-    price: "NPR 110,000",
+    price:  110000,
     category: "Mangalsutra",
     type: "Gold",
     image: "/images/mangalsutra1.jpg",
@@ -231,7 +231,7 @@ export const products: Product[] = [
   {
     id: 17,
     name: "Silver Chain for Men",
-    price: "NPR 28,000",
+    price:  28000,
     category: "Chain",
     type: "Silver",
     image: "/images/chain2.jpg",
@@ -245,7 +245,7 @@ export const products: Product[] = [
   {
     id: 18,
     name: "Platinum Wedding Band",
-    price: "NPR 210,000",
+    price:  210000,
     category: "Ring",
     type: "Platinum",
     image: "/images/ring3.jpg",
@@ -259,7 +259,7 @@ export const products: Product[] = [
   {
     id: 19,
     name: "Gold Drop Earrings",
-    price: "NPR 78,000",
+    price:  78000,
     category: "Earrings",
     type: "Gold",
     image: "/images/earring3.jpg",
@@ -273,7 +273,7 @@ export const products: Product[] = [
   {
     id: 20,
     name: "Diamond Bracelet",
-    price: "NPR 390,000",
+    price:  390000,
     category: "Bracelet",
     type: "Diamond",
     image: "/images/bracelet2.jpg",
@@ -287,7 +287,7 @@ export const products: Product[] = [
   {
     id: 21,
     name: "Silver Payal",
-    price: "NPR 15,000",
+    price:  15000,
     category: "Anklet",
     type: "Silver",
     image: "/images/payal1.jpg",
@@ -301,7 +301,7 @@ export const products: Product[] = [
   {
     id: 22,
     name: "Gold Bridal Set",
-    price: "NPR 520,000",
+    price:  520000,
     category: "Jewellery Set",
     type: "Gold",
     image: "/images/bridalset1.jpg",
@@ -315,7 +315,7 @@ export const products: Product[] = [
   {
     id: 23,
     name: "Diamond Pendant",
-    price: "NPR 135,000",
+    price:  135000,
     category: "Pendant",
     type: "Diamond",
     image: "/images/pendant2.jpg",

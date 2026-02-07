@@ -7,13 +7,18 @@ export interface Review {
 export interface Product {
   id: number;
   name: string;
-  price: string;
+  price: number;
   category: string;
   type: "Gold" | "Silver" | "Diamond" | "Platinum";
   image: string;
   description: string;
-  rating: number; // 1 to 5
+  rating: number; 
   reviews: Review[];
+}
+
+//cart
+export interface CartItems extends Product {
+    quantity: number
 }
 
 
