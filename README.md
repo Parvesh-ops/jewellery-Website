@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Binod Jewellers - Nepali Jewellery E-commerce Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive, and feature-rich e-commerce website for **Binod Jewellers**, a Nepali jewellery brand. This platform showcases gold, silver, and diamond collections, allowing customers to browse, add to cart, favorite items, and complete checkout seamlessly.
 
-Currently, two official plugins are available:
+Built with **React**, **TypeScript**, and **Tailwind CSS**, it is inspired by global e-commerce platforms like **Amazon** and **Daraz**, but tailored for Nepali customers.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Core Features
+- Fully **responsive design** for mobile, tablet, and desktop
+- Browse jewellery collections with high-quality images
+- **Product details page** for each item
+- **Add to Cart** with quantity controls
+- **Favorites / Wishlist** functionality
+- **Order Summary** with subtotal, delivery, handling fee, and total
+- **Checkout page** with address and payment options
+- Sticky order summary on desktop
+- Secure and clean UI inspired by major e-commerce platforms
 
-## Expanding the ESLint configuration
+### Additional Features
+- Google Maps integration for store location
+- Store video embedded to showcase products
+- Contact form with validation and submission
+- Store opening hours and contact information
+- Toast notification on adding items to cart/favorites
+- Clear cart functionality
+- Trust badges for payment security and customer support
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠 Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Frontend:**
+  - React.js
+  - TypeScript
+  - Tailwind CSS
+  - React Router
+  - React Icons
+- **State Management:**
+  - React Context API for Cart and Favorites
+- **Other Tools:**
+  - Google Maps Embed
+  - Responsive design utilities from Tailwind CSS
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
