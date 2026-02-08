@@ -1,12 +1,6 @@
 import { FaMinus, FaPlus, FaRegTrashAlt, FaTrash } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
-import {
-    FaShoppingBag,
-    FaTruck,
-    FaTools,
-    FaLock,
-    FaHeadset
-} from "react-icons/fa";
+import { FaShoppingBag, FaTruck, FaTools, FaLock, FaHeadset } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 
@@ -42,7 +36,7 @@ const Cart = () => {
                     <h2 className="text-2xl font-bold text-gray-900 mb-4">
                         Shopping Cart ({totalQuantity} items)
                     </h2>
-                    
+
                     <hr className="mb-4" />
 
                     {cartItems.map((item) => (
@@ -163,7 +157,9 @@ const Cart = () => {
                     </div>
 
                     {/* Checkout */}
-                    <button className="w-full bg-yellow-500 text-black py-3 rounded-full font-semibold hover:bg-yellow-600 transition">
+                    <button 
+                    onClick={()=> navigate('/checkout')}
+                    className="w-full bg-yellow-500 text-black py-3 rounded-full font-semibold hover:bg-yellow-600 transition">
                         Proceed to Checkout
                     </button>
 
