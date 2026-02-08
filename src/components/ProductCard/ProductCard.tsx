@@ -14,7 +14,10 @@ const ProductCard = ({ product }: ProductProps) => {
     const navigate = useNavigate() // for singleProduct
 
     const { addToCart } = useCart();
-    const { addToFavorites } = useFavorite()
+    const { favorites, addToFavorites, removeFromFavorites } = useFavorite();
+    const isFavorite = favorites.find(
+        (item) => item.id === product?.id
+    );
     return (
         <div className="border rounded-lg cursor-pointer border-gray-300 hover:scale-105 hover:shadow-xl transition-transform duration-300 bg-white overflow-hidden">
             {/* Image */}
@@ -45,8 +48,16 @@ const ProductCard = ({ product }: ProductProps) => {
                     </button>
 
                     <button
-                        onClick={() => addToFavorites(product)}
-                        className="text-gray-600 hover:text-red-500 transition">
+                        onClick={() =>
+                            isFavorite
+                                ? removeFromFavorites(product.id)
+                                : addToFavorites(product)
+                        }
+                        className={`transition text-xl ${isFavorite
+                            ? "text-red-500"
+                            : "text-gray-600 hover:text-red-500"
+                            }`}
+                    >
                         <GrFavorite />
                     </button>
                 </div>

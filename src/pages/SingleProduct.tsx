@@ -15,7 +15,11 @@ const SingleProduct = () => {
     const [quantity, setQuantity] = useState(1);
 
     const { addToCart } = useCart();
-    const {addToFavorites} = useFavorite();
+    const { favorites, addToFavorites, removeFromFavorites } = useFavorite();
+    const isFavorite = favorites.find(
+        (item) => item.id === singleProduct?.id
+    );
+    
     useEffect(() => {
         if (id) {
             const foundProduct = productData.find(
@@ -102,8 +106,16 @@ const SingleProduct = () => {
                         />
 
                         <button
-                            onClick={() => addToFavorites(singleProduct)}
-                            className="text-gray-600 hover:text-red-500 transition">
+                            onClick={() =>
+                                isFavorite
+                                    ? removeFromFavorites(singleProduct.id)
+                                    : addToFavorites(singleProduct)
+                            }
+                            className={`transition text-xl ${isFavorite
+                                    ? "text-red-500"
+                                    : "text-gray-600 hover:text-red-500"
+                                }`}
+                        >
                             <GrFavorite />
                         </button>
 
