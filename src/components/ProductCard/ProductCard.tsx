@@ -5,6 +5,7 @@ import type { Product } from "../../types/product";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { useFavorite } from "../../context/FavoriteContext";
+import { useToast } from "../../context/ToastContext";
 
 interface ProductProps {
     product: Product;
@@ -14,6 +15,7 @@ const ProductCard = ({ product }: ProductProps) => {
     const navigate = useNavigate() // for singleProduct
 
     const { addToCart } = useCart();
+    const { showToast } = useToast();
     const { favorites, addToFavorites, removeFromFavorites } = useFavorite();
     const isFavorite = favorites.find(
         (item) => item.id === product?.id
@@ -41,7 +43,10 @@ const ProductCard = ({ product }: ProductProps) => {
                 {/* Actions */}
                 <div className="flex items-center justify-between">
                     <button
-                        onClick={() => addToCart(product)}
+                        onClick={() => {
+                            addToCart(product)
+                            showToast(`✔ added to cart!!`);
+                        }}
                         className="flex items-center gap-1 text-xs sm:text-sm 
                          bg-yellow-500 text-black px-2 sm:px-3 py-1.5 
                           rounded-full hover:bg-yellow-600 transition"

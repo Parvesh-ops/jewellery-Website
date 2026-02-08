@@ -6,13 +6,17 @@ import { useData } from "../../context/DataContext";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { useCart } from "../../context/CartContext";
 import { useFavorite } from "../../context/FavoriteContext";
+import { useToast } from "../../context/ToastContext";
 
 const BestSeller = () => {
     const { data } = useData();
     const { addToCart } = useCart();
     const { addToFavorites } = useFavorite()
+    const { showToast } = useToast();
 
     const bestSellers = data.slice(0, 4);
+
+
 
     return (
         <section className="py-16 bg-[#fafafa]">
@@ -58,7 +62,11 @@ const BestSeller = () => {
                                 {/* Actions */}
                                 <div className="flex items-center justify-between">
                                     <button
-                                        onClick={() => addToCart(product)}
+                                        onClick={() => {
+                                            addToCart(product);
+                                            showToast(`✔ added to cart!!`);
+                                        }}
+
                                         className="flex items-center gap-2 text-sm bg-yellow-500 text-black px-3 py-1.5 rounded-full hover:bg-yellow-600 transition"
                                     >
                                         <IoCartOutline />

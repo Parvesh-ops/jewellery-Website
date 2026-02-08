@@ -23,7 +23,7 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
             {children}
             {/* Toast Popup */}
             {toast.visible && (
-                <div className="fixed bottom-6 right-6 bg-yellow-500 text-black px-5 py-3 rounded-lg shadow-lg animate-fadeInUp z-50">
+                <div className="fixed top-6 right-6 bg-green-500 text-black px-5 py-3 rounded-lg shadow-lg animate-fadeInUp z-50">
                     {toast.message}
                 </div>
             )}
