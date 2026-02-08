@@ -4,6 +4,7 @@ import { IoCartOutline } from "react-icons/io5";
 import type { Product } from "../../types/product";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
+import { useFavorite } from "../../context/FavoriteContext";
 
 interface ProductProps {
     product: Product;
@@ -11,7 +12,9 @@ interface ProductProps {
 
 const ProductCard = ({ product }: ProductProps) => {
     const navigate = useNavigate() // for singleProduct
-    const { addToCart } = useCart()
+
+    const { addToCart } = useCart();
+    const { addToFavorites } = useFavorite()
     return (
         <div className="border rounded-lg cursor-pointer border-gray-300 hover:scale-105 hover:shadow-xl transition-transform duration-300 bg-white overflow-hidden">
             {/* Image */}
@@ -41,7 +44,9 @@ const ProductCard = ({ product }: ProductProps) => {
                         Add
                     </button>
 
-                    <button className="text-gray-600 hover:text-red-500 transition">
+                    <button
+                        onClick={() => addToFavorites(product)}
+                        className="text-gray-600 hover:text-red-500 transition">
                         <GrFavorite />
                     </button>
                 </div>

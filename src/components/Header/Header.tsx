@@ -4,11 +4,13 @@ import { Menu, X } from "lucide-react";
 import { GrFavorite } from "react-icons/gr";
 import { IoCartOutline } from "react-icons/io5";
 import { useCart } from "../../context/CartContext";
+import { useFavorite } from "../../context/FavoriteContext";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
 
-  const {cartItems} = useCart();
+  const { cartItems } = useCart();
+  const { favorites } = useFavorite();
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `block px-4 py-2 text-sm font-semibold transition-colors duration-200
@@ -37,16 +39,16 @@ const Header = () => {
           {/* Favorite */}
           <Link to="/favorite" className="relative text-black hover:text-yellow-500">
             <GrFavorite className="h-6 w-6" />
-            <span className="absolute -top-2 -right-2 bg-red-500 text-black text-xs px-1.5 rounded-full">
-              
+            <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
+              {favorites.length}
             </span>
           </Link>
 
           {/* Cart */}
           <Link to="/cart" className="relative text-black hover:text-yellow-500">
             <IoCartOutline className="h-6 w-6" />
-            <span className="absolute -top-2 -right-2 bg-red-500 text-black text-xs px-1.5 rounded-full">
-             {cartItems.length}
+            <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
+              {cartItems.length}
             </span>
           </Link>
         </div>
@@ -91,8 +93,8 @@ const Header = () => {
           >
             <GrFavorite className="h-6 w-6" />
             <span className="text-sm font-medium">Favorite</span>
-            <span className="absolute -top-2 -right-3 bg-red-500 text-black text-xs px-1.5 rounded-full">
-              0
+            <span className="absolute -top-2 -right-3 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
+              {favorites.length}
             </span>
           </Link>
 
@@ -104,7 +106,7 @@ const Header = () => {
           >
             <IoCartOutline className="h-6 w-6" />
             <span className="text-sm font-medium">Cart</span>
-            <span className="absolute -top-2 -right-3 bg-red-500 text-black text-xs px-1.5 rounded-full">
+            <span className="absolute -top-2 -right-3 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
               {cartItems.length}
             </span>
           </Link>

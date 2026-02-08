@@ -5,10 +5,12 @@ import { IoCartOutline } from "react-icons/io5";
 import { useData } from "../../context/DataContext";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { useCart } from "../../context/CartContext";
+import { useFavorite } from "../../context/FavoriteContext";
 
 const BestSeller = () => {
     const { data } = useData();
     const { addToCart } = useCart();
+    const { addToFavorites } = useFavorite()
 
     const bestSellers = data.slice(0, 4);
 
@@ -56,14 +58,16 @@ const BestSeller = () => {
                                 {/* Actions */}
                                 <div className="flex items-center justify-between">
                                     <button
-                                    onClick={()=> addToCart(product)}
+                                        onClick={() => addToCart(product)}
                                         className="flex items-center gap-2 text-sm bg-yellow-500 text-black px-3 py-1.5 rounded-full hover:bg-yellow-600 transition"
                                     >
                                         <IoCartOutline />
                                         Add
                                     </button>
 
-                                    <button className="text-gray-600 hover:text-red-500 transition">
+                                    <button
+                                        onClick={() => addToFavorites(product)}
+                                        className="text-gray-600 hover:text-red-500 transition">
                                         <GrFavorite />
                                     </button>
                                 </div>

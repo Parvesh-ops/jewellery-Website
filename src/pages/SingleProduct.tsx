@@ -5,6 +5,8 @@ import { products as productData } from "../data/products";
 import { IoCartOutline } from "react-icons/io5";
 import Breadcrums from "../components/Breadcrums/Breadcrums";
 import { useCart } from "../context/CartContext";
+import { GrFavorite } from "react-icons/gr";
+import { useFavorite } from "../context/FavoriteContext";
 
 const SingleProduct = () => {
     const { id } = useParams<string>(); // for single product 
@@ -12,7 +14,8 @@ const SingleProduct = () => {
     const [loading, setLoading] = useState(true);
     const [quantity, setQuantity] = useState(1);
 
-    const {addToCart} = useCart();
+    const { addToCart } = useCart();
+    const {addToFavorites} = useFavorite();
     useEffect(() => {
         if (id) {
             const foundProduct = productData.find(
@@ -98,12 +101,18 @@ const SingleProduct = () => {
                             className="w-20 border rounded-lg px-2 py-1"
                         />
 
+                        <button
+                            onClick={() => addToFavorites(singleProduct)}
+                            className="text-gray-600 hover:text-red-500 transition">
+                            <GrFavorite />
+                        </button>
+
                     </div>
 
                     {/* ACTIONS */}
                     <div className="flex gap-3 mt-5">
                         <button
-                        onClick={()=> addToCart(singleProduct)}
+                            onClick={() => addToCart(singleProduct)}
                             className="flex items-center gap-2 text-sm bg-yellow-500 text-black px-3 py-1.5 rounded-full hover:bg-yellow-600 transition"
                         >
                             <IoCartOutline /> Add to Cart
