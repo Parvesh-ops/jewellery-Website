@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 import type { Product } from "../types/product";
 
 interface FavoriteContextType {
@@ -35,3 +35,12 @@ export const FavoriteProvider = ({ children }: { children: React.ReactNode }) =>
         </FavoriteContext.Provider>
     )
 }
+
+//custom hooks
+export const useFavorite = () => {
+    const context = useContext(FavoriteContext)
+    if (!context) {
+        throw new Error("useCart must be used within CartProvider");
+    }
+    return context;
+};
