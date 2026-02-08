@@ -5,6 +5,10 @@ A modern, responsive, and feature-rich e-commerce website for **Binod Jewellers*
 Built with **React**, **TypeScript**, and **Tailwind CSS**, it is inspired by global e-commerce platforms like **Amazon** and **Daraz**, but tailored for Nepali customers.
 
 ---
+## Link
+https://jewellery-website-teal-nine.vercel.app/
+
+---
 
 ## 🚀 Features
 
