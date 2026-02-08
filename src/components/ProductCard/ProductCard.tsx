@@ -25,7 +25,7 @@ const ProductCard = ({ product }: ProductProps) => {
                 src={product.image}
                 alt={product.name}
                 onClick={() => navigate(`/products/${product.id}`)}  // for singleProduc
-                className="w-full h-48 object-cover group-hover:scale-105 transition duration-300"
+                className="w-full h-40 sm:h-48 object-cover transition duration-300"
             />
 
             {/* Content */}
@@ -42,10 +42,14 @@ const ProductCard = ({ product }: ProductProps) => {
                 <div className="flex items-center justify-between">
                     <button
                         onClick={() => addToCart(product)}
-                        className="flex items-center gap-2 text-sm bg-yellow-500 text-black px-3 py-1.5 rounded-full hover:bg-yellow-600 transition">
+                        className="flex items-center gap-1 text-xs sm:text-sm 
+                         bg-yellow-500 text-black px-2 sm:px-3 py-1.5 
+                          rounded-full hover:bg-yellow-600 transition"
+                    >
                         <IoCartOutline />
                         Add
                     </button>
+
 
                     <button
                         onClick={() =>

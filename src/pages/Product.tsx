@@ -52,7 +52,7 @@ const Product = () => {
           <div className="w-full md:w-3/4 flex flex-col items-center">
             {filteredData?.length > 0 ? (
               <>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6 w-full">
                   {filteredData
                     .slice((page - 1) * 8, page * 8)
                     .map((product) => (

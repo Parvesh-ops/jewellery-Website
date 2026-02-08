@@ -31,7 +31,6 @@ const Header = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-6">
           <NavLink to="/" className={navLinkClass}>Home</NavLink>
-          <NavLink to="/collections" className={navLinkClass}>Collections</NavLink>
           <NavLink to="/products" className={navLinkClass}>Products</NavLink>
           <NavLink to="/about" className={navLinkClass}>About Us</NavLink>
           <NavLink to="/contact" className={navLinkClass}>Contact</NavLink>
@@ -77,7 +76,6 @@ const Header = () => {
       >
 
         <NavLink to="/" onClick={() => setOpen(false)} className={navLinkClass}>Home</NavLink>
-        <NavLink to="/collections" onClick={() => setOpen(false)} className={navLinkClass}>Collections</NavLink>
         <NavLink to="/products" onClick={() => setOpen(false)} className={navLinkClass}>Products</NavLink>
         <NavLink to="/about" onClick={() => setOpen(false)} className={navLinkClass}>About Us</NavLink>
         <NavLink to="/contact" onClick={() => setOpen(false)} className={navLinkClass}>Contact</NavLink>
