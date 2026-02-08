@@ -4,13 +4,15 @@ import type { Product } from "../types/product";
 import { products as productData } from "../data/products";
 import { IoCartOutline } from "react-icons/io5";
 import Breadcrums from "../components/Breadcrums/Breadcrums";
+import { useCart } from "../context/CartContext";
 
 const SingleProduct = () => {
-    const { id } = useParams<{ id: string }>();
+    const { id } = useParams<string>(); // for single product 
     const [singleProduct, setSingleProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
     const [quantity, setQuantity] = useState(1);
 
+    const {addToCart} = useCart();
     useEffect(() => {
         if (id) {
             const foundProduct = productData.find(
@@ -101,6 +103,7 @@ const SingleProduct = () => {
                     {/* ACTIONS */}
                     <div className="flex gap-3 mt-5">
                         <button
+                        onClick={()=> addToCart(singleProduct)}
                             className="flex items-center gap-2 text-sm bg-yellow-500 text-black px-3 py-1.5 rounded-full hover:bg-yellow-600 transition"
                         >
                             <IoCartOutline /> Add to Cart
