@@ -42,6 +42,8 @@ const Cart = () => {
                     <h2 className="text-2xl font-bold text-gray-900 mb-4">
                         Shopping Cart ({totalQuantity} items)
                     </h2>
+                    
+                    <hr className="mb-4" />
 
                     {cartItems.map((item) => (
                         <div
