@@ -13,7 +13,7 @@ const Breadcrums = ({name}: BreadcrumsProps) => {
         
         {/* Home Link */}
         <span
-          className="cursor-pointer hover:text-red-500 transition-colors"
+          className="cursor-pointer hover:text-yellow-500 transition-colors"
           onClick={() => navigate('/')}
         >
           Home
@@ -22,7 +22,7 @@ const Breadcrums = ({name}: BreadcrumsProps) => {
 
           {/* Products Link */}
         <span
-          className="cursor-pointer hover:text-red-500 transition-colors"
+          className="cursor-pointer hover:text-yellow-500 transition-colors"
           onClick={() => navigate('/products')}
         >
           Products
