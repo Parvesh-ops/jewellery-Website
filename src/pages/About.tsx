@@ -1,39 +1,54 @@
 import WhyChooseUs from "../components/WhyChooseUs/WhyChoseUs";
+import founderImg from "../assets/founderImg.jpg";
 
 const About = () => {
   return (
     <section className="bg-[#faf7f2] py-16 px-6">
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
 
         {/* Text Content */}
-        <div>
-          <h4 className="text-yellow-600 font-semibold tracking-widest uppercase mb-2">
+        <div className="flex flex-col justify-center gap-6">
+          <h4 className="text-yellow-600 font-semibold tracking-widest uppercase">
             About Us
           </h4>
 
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
             Binod Jewellers – Trusted Nepali Craftsmanship
           </h2>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+            {/* Founder Section */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
+            <img
+              src={founderImg}
+              alt="Binod Chaudhary"
+              className="w-24 h-24 sm:w-20 sm:h-20 rounded-full object-cover border-2 border-yellow-500"
+            />
+            <div className="text-center sm:text-left">
+              <p className="font-semibold text-gray-900">Binod Chaudhary</p>
+              <p className="text-gray-600 text-sm">Founder</p>
+            </div>
+          </div>
+          
+
+          <p className="text-gray-700 leading-relaxed">
             Founded by <span className="font-semibold">Binod Chaudhary</span> in Gramtha-6, Netachowk, Morang, Binod Jewellers has been serving families across Nepal with authentic gold, silver, and diamond jewellery. Every piece is handcrafted with precision, reflecting our dedication to purity, tradition, and elegance.
           </p>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed">
             Here, you can <span className="font-semibold">buy or sell jewellery</span> according to your needs. We also create custom ornaments based on your order. Our collections cater to every occasion—from weddings and festivals to everyday elegance.
           </p>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-700 leading-relaxed">
             For your safety and peace of mind, we track all jewellery records using <span className="font-semibold">Excel and Power BI</span>, ensuring accurate documentation and transparency.
           </p>
 
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="text-gray-700 leading-relaxed">
             With nationwide delivery, custom designs on request, and transparent pricing, we make premium jewellery accessible and trustworthy for all Nepali families.
           </p>
 
-          <div className="flex gap-4 mt-4">
+          <div className="flex flex-wrap gap-4 mt-4">
             <span className="px-4 py-2 rounded-full bg-yellow-100 text-yellow-700 text-sm font-medium">
-               Custom Jewellery on Request
+              Custom Jewellery on Request
             </span>
             <span className="px-4 py-2 rounded-full bg-yellow-100 text-yellow-700 text-sm font-medium">
               24*7 Support
@@ -42,10 +57,12 @@ const About = () => {
               Delivery All Over Nepal
             </span>
           </div>
+
+        
         </div>
 
         {/* Highlight Card */}
-        <div className="relative">
+        <div className="relative mt-8 md:mt-0">
           <div className="bg-white rounded-3xl shadow-xl p-8 border border-yellow-100 hover:scale-105 transform transition duration-300">
             <h3 className="text-2xl font-semibold mb-5 text-gray-900">
               Why Customers Trust Us
@@ -64,7 +81,6 @@ const About = () => {
               <li>✔ Trusted by Nepali Families for Generations</li>
               <li>✔ Expert Guidance by Owner Binod Chaudhary</li>
             </ul>
-
           </div>
 
           {/* Highlight Badge */}
@@ -73,7 +89,11 @@ const About = () => {
           </div>
         </div>
       </div>
-      <WhyChooseUs />
+
+      {/* Why Choose Us Section */}
+      <div className="mt-12">
+        <WhyChooseUs />
+      </div>
     </section>
   );
 };
