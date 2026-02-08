@@ -71,7 +71,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-[#0f0f0f] px-6 overflow-hidden transition-all duration-300
+        className={`md:hidden bg-[#ffffff] px-6 overflow-hidden transition-all duration-300
   ${open ? "max-h-125 opacity-100" : "max-h-0 opacity-0"}`}
       >
 
