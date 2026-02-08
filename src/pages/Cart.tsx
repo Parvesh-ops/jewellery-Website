@@ -46,7 +46,7 @@ const Cart = () => {
   }
 
   return (
-    <section className="bg-[#faf7f2] py-8 px-4">
+    <section className="bg-[#faf7f2] min-h-screen py-8 px-2">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
 
         {/* CART ITEMS */}
@@ -54,6 +54,8 @@ const Cart = () => {
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
             Shopping Cart ({totalQuantity} items)
           </h2>
+          
+          <hr className="mb-2" />
 
           {cartItems.map((item) => (
             <div
