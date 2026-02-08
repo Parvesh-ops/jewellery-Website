@@ -92,7 +92,9 @@ const Footer = () => {
 
           <div className="flex gap-4 mb-6">
             <a
-              href="#"
+              href="https://www.facebook.com/uniquebinod"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-3 bg-[#1a1a1a] rounded-full hover:bg-yellow-500 hover:text-black transition"
             >
               <FaFacebook size={18} />
@@ -104,11 +106,14 @@ const Footer = () => {
               <FaInstagram size={18} />
             </a>
             <a
-              href="#"
+              href="https://www.tiktok.com/@friendsclub29"
+              target="_blank"
+              rel="noopener noreferrer"
               className="p-3 bg-[#1a1a1a] rounded-full hover:bg-yellow-500 hover:text-black transition"
             >
               <FaTiktok size={18} />
             </a>
+
           </div>
 
           <p className="text-sm mb-2">Subscribe for latest designs</p>
