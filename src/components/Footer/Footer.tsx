@@ -5,7 +5,7 @@ import { FaFacebook, FaInstagram, FaTiktok, } from "react-icons/fa";
 const Footer = () => {
   return (
     <footer className="bg-[#0f0f0f] text-gray-300 pt-16">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-12">
 
         {/* Brand Story */}
         <div>
