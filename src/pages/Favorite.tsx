@@ -2,9 +2,11 @@
 import { useFavorite } from "../context/FavoriteContext";
 import { MdOutlineFavorite } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "../context/ToastContext";
 
 const Favorite = () => {
     const { favorites, removeFromFavorites } = useFavorite();
+    const { showToast } = useToast();
     const navigate = useNavigate();
 
     if (favorites.length === 0) {
@@ -60,7 +62,10 @@ const Favorite = () => {
                                 {/* Action Buttons */}
                                 <div className="mt-auto flex justify-between items-center">
                                     <button
-                                        onClick={() => removeFromFavorites(item.id)}
+                                        onClick={() => {
+                                            removeFromFavorites(item.id)
+                                            showToast('remove from wishlist!!')
+                                        }}
                                         className="flex items-center gap-2 text-red-500 font-semibold hover:text-red-600 transition"
                                     >
                                         <MdOutlineFavorite size={20} />
