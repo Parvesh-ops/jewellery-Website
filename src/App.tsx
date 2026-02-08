@@ -8,6 +8,7 @@ import SingleProduct from "./pages/SingleProduct"
 import Contact from "./pages/Contact"
 import Cart from "./pages/Cart"
 import Checkout from "./pages/Checkout"
+import Favorite from "./pages/Favorite"
 
 
 const App = () => {
@@ -22,7 +23,8 @@ const App = () => {
         { path: "about", element: <About /> },
         { path: "contact", element: <Contact /> },
         { path: "cart", element: <Cart /> },
-        {path:"/checkout", element: <Checkout /> } 
+        {path:"/checkout", element: <Checkout /> },
+        {path:"/favorite", element: <Favorite /> },
 
       ]
     }
