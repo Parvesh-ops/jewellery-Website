@@ -22,7 +22,7 @@ const CustomerTestimonials = () => {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
+       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 gap-8">
         {reviewsToShow.map((review, index) => (
           <div
             key={index}

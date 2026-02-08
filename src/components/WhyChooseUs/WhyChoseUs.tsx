@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Features */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
 
           {/* Card 1 */}
           <div className=" border border-yellow-500 p-6 rounded-xl text-center hover:scale-105 transition">
