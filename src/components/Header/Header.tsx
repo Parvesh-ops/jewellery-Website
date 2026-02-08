@@ -14,13 +14,14 @@ const Header = () => {
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `block px-4 py-2 text-sm font-semibold transition-colors duration-200
-     ${isActive
-      ? "text-yellow-500 md:border-b-2 md:border-yellow-500"
-      : "text-black hover:text-yellow-500"
-    }`;
+     ${
+       isActive
+         ? "text-yellow-500 md:border-b-2 md:border-yellow-500"
+         : "text-black hover:text-yellow-500"
+     }`;
 
   return (
-    <nav className="w-full bg-[#ffffff] sticky top-0 z-50 shadow-md">
+    <nav className="w-full bg-white sticky top-0 z-50 shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
 
         {/* Logo */}
@@ -60,55 +61,43 @@ const Header = () => {
           Visit Store
         </NavLink>
 
-        {/* Mobile Menu Button */}
-        <button
-          className="md:hidden text-black"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <X size={28} /> : <Menu size={28} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden bg-[#ffffff] px-6 overflow-hidden transition-all duration-300
-  ${open ? "max-h-125 opacity-100" : "max-h-0 opacity-0"}`}
-      >
-
-        <NavLink to="/" onClick={() => setOpen(false)} className={navLinkClass}>Home</NavLink>
-        <NavLink to="/products" onClick={() => setOpen(false)} className={navLinkClass}>Products</NavLink>
-        <NavLink to="/about" onClick={() => setOpen(false)} className={navLinkClass}>About Us</NavLink>
-        <NavLink to="/contact" onClick={() => setOpen(false)} className={navLinkClass}>Contact</NavLink>
-
-        {/* Mobile Cart & Favorite */}
-        <div className="flex items-center justify-around mt-4 pt-4 border-t border-gray-700">
-
+        {/* Mobile Actions (Always Visible) */}
+        <div className="md:hidden flex items-center gap-4">
           {/* Favorite */}
-          <Link
-            to="/favorite"
-            onClick={() => setOpen(false)}
-            className="relative text-black hover:text-yellow-500 flex items-center gap-2"
-          >
+          <Link to="/favorite" className="relative text-black hover:text-yellow-500">
             <GrFavorite className="h-6 w-6" />
-            <span className="text-sm font-medium">Favorite</span>
-            <span className="absolute -top-2 -right-3 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
+            <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
               {favorites.length}
             </span>
           </Link>
 
           {/* Cart */}
-          <Link
-            to="/cart"
-            onClick={() => setOpen(false)}
-            className="relative text-black hover:text-yellow-500 flex items-center gap-2"
-          >
+          <Link to="/cart" className="relative text-black hover:text-yellow-500">
             <IoCartOutline className="h-6 w-6" />
-            <span className="text-sm font-medium">Cart</span>
-            <span className="absolute -top-2 -right-3 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
+            <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
               {cartItems.length}
             </span>
           </Link>
+
+          {/* Menu Button */}
+          <button
+            className="text-black"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`md:hidden bg-white px-6 overflow-hidden transition-all duration-300
+        ${open ? "max-h-100 opacity-100" : "max-h-0 opacity-0"}`}
+      >
+        <NavLink to="/" onClick={() => setOpen(false)} className={navLinkClass}>Home</NavLink>
+        <NavLink to="/products" onClick={() => setOpen(false)} className={navLinkClass}>Products</NavLink>
+        <NavLink to="/about" onClick={() => setOpen(false)} className={navLinkClass}>About Us</NavLink>
+        <NavLink to="/contact" onClick={() => setOpen(false)} className={navLinkClass}>Contact</NavLink>
 
         {/* Mobile CTA */}
         <NavLink
@@ -119,7 +108,6 @@ const Header = () => {
           Visit Store
         </NavLink>
       </div>
-
     </nav>
   );
 };
