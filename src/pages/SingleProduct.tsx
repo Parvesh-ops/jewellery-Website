@@ -108,18 +108,21 @@ const SingleProduct = () => {
                         />
 
                         <button
-                            onClick={() =>
-                                isFavorite
-                                    ? removeFromFavorites(singleProduct.id)
-                                    : addToFavorites(singleProduct)
-                            }
-                            className={`transition text-xl ${isFavorite
-                                ? "text-red-500"
-                                : "text-gray-600 hover:text-red-500"
+                            onClick={() => {
+                                if (isFavorite) {
+                                    removeFromFavorites(singleProduct.id);
+                                    showToast(` removed from wishlist!`);
+                                } else {
+                                    addToFavorites(singleProduct);
+                                    showToast(`✔added to wishlist!`);
+                                }
+                            }}
+                            className={`transition text-xl ${isFavorite ? "text-red-500" : "text-gray-600 hover:text-red-500"
                                 }`}
                         >
                             <GrFavorite />
                         </button>
+
 
                     </div>
 

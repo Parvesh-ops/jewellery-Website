@@ -56,19 +56,21 @@ const ProductCard = ({ product }: ProductProps) => {
                     </button>
 
 
-                    <button
-                        onClick={() =>
-                            isFavorite
-                                ? removeFromFavorites(product.id)
-                                : addToFavorites(product)
-                        }
-                        className={`transition text-xl ${isFavorite
-                            ? "text-red-500"
-                            : "text-gray-600 hover:text-red-500"
-                            }`}
-                    >
-                        <GrFavorite />
-                    </button>
+                        <button
+                            onClick={() => {
+                                if (isFavorite) {
+                                    removeFromFavorites(product.id);
+                                    showToast(` removed from wishlist!`);
+                                } else {
+                                    addToFavorites(product);
+                                    showToast(`✔added to wishlist!`);
+                                }
+                            }}
+                            className={`transition text-xl ${isFavorite ? "text-red-500" : "text-gray-600 hover:text-red-500"
+                                }`}
+                        >
+                            <GrFavorite />
+                        </button>
                 </div>
             </div>
         </div>
