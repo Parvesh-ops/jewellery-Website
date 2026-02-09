@@ -53,37 +53,37 @@ const Header = () => {
           </Link>
         </div>
 
-        {/* Desktop CTA */}
-        <NavLink
-          to="/contact"
-          className="hidden md:inline-block bg-yellow-500 text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-yellow-600 transition"
-        >
-          Visit Store
-        </NavLink>
+        {/* Desktop CTA + Sign In */}
+        <div className="hidden md:flex items-center gap-3">
+          <NavLink
+            to="/contact"
+            className="bg-yellow-500 text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-yellow-600 transition"
+          >
+            Visit Store
+          </NavLink>
 
-        {/* Mobile Actions (Always Visible) */}
+          <button className="border border-yellow-500 text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-yellow-500 hover:text-black transition">
+            Sign In
+          </button>
+        </div>
+
+        {/* Mobile Actions */}
         <div className="md:hidden flex items-center gap-4">
-          {/* Favorite */}
-          <Link to="/favorite" className="relative text-black hover:text-yellow-500">
+          <Link to="/favorite" className="relative text-black">
             <GrFavorite className="h-6 w-6" />
             <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
               {favorites.length}
             </span>
           </Link>
 
-          {/* Cart */}
-          <Link to="/cart" className="relative text-black hover:text-yellow-500">
+          <Link to="/cart" className="relative text-black">
             <IoCartOutline className="h-6 w-6" />
             <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
               {cartItems.length}
             </span>
           </Link>
 
-          {/* Menu Button */}
-          <button
-            className="text-black"
-            onClick={() => setOpen(!open)}
-          >
+          <button onClick={() => setOpen(!open)} className="text-black">
             {open ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
@@ -92,7 +92,7 @@ const Header = () => {
       {/* Mobile Menu */}
       <div
         className={`md:hidden bg-white px-6 overflow-hidden transition-all duration-300
-        ${open ? "max-h-100 opacity-100" : "max-h-0 opacity-0"}`}
+        ${open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"}`}
       >
         <NavLink to="/" onClick={() => setOpen(false)} className={navLinkClass}>Home</NavLink>
         <NavLink to="/products" onClick={() => setOpen(false)} className={navLinkClass}>Products</NavLink>
@@ -107,6 +107,11 @@ const Header = () => {
         >
           Visit Store
         </NavLink>
+
+        {/* Mobile Sign In */}
+        <button className="w-full mt-3 border border-yellow-500 text-black py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
+          Sign In
+        </button>
       </div>
     </nav>
   );
