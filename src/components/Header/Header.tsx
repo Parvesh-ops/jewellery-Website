@@ -5,6 +5,7 @@ import { GrFavorite } from "react-icons/gr";
 import { IoCartOutline } from "react-icons/io5";
 import { useCart } from "../../context/CartContext";
 import { useFavorite } from "../../context/FavoriteContext";
+import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/clerk-react";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -14,11 +15,10 @@ const Header = () => {
 
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `block px-4 py-2 text-sm font-semibold transition-colors duration-200
-     ${
-       isActive
-         ? "text-yellow-500 md:border-b-2 md:border-yellow-500"
-         : "text-black hover:text-yellow-500"
-     }`;
+     ${isActive
+      ? "text-yellow-500 md:border-b-2 md:border-yellow-500"
+      : "text-black hover:text-yellow-500"
+    }`;
 
   return (
     <nav className="w-full bg-white sticky top-0 z-50 shadow-md">
@@ -62,9 +62,18 @@ const Header = () => {
             Visit Store
           </NavLink>
 
-          <button className="border border-yellow-500 text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-yellow-500 hover:text-black transition">
-            Sign In
-          </button>
+          {/* Desktop Auth  & signIn */}
+          <SignedOut>
+            <SignInButton>
+              <button className="border border-yellow-500 text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-yellow-500 hover:text-black transition">
+                Sign In
+              </button>
+            </SignInButton>
+          </SignedOut>
+
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
         </div>
 
         {/* Mobile Actions */}
@@ -108,10 +117,21 @@ const Header = () => {
           Visit Store
         </NavLink>
 
-        {/* Mobile Sign In */}
-        <button className="w-full mt-3 border border-yellow-500 text-black py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
-          Sign In
-        </button>
+        {/* Mobile Sign In & Mobile Auth  */}
+        <SignedOut>
+          <SignInButton>
+            <button className="w-full mt-3 border border-yellow-500 text-black py-2 rounded-full font-semibold hover:bg-yellow-500 transition">
+              Sign In
+            </button>
+          </SignInButton>
+        </SignedOut>
+
+        <SignedIn>
+          <div className="mt-4 flex justify-center">
+            <UserButton />
+          </div>
+        </SignedIn>
+
       </div>
     </nav>
   );
