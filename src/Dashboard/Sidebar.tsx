@@ -30,7 +30,7 @@ const AdminSidebar = () => {
         <img
           src={user.imageUrl}
           alt="profile"
-          className="w-20 h-20 rounded-full object-cover border"
+          className="w-20 h-20 rounded-full object-cover"
         />
         <h4 className="mt-3 text-sm font-semibold text-gray-800">
           {user.firstName} {user.lastName}
