@@ -4,7 +4,6 @@ import {
   FaTrash,
   FaRegTrashAlt,
   FaShoppingBag,
-  FaTruck,
   FaTools,
   FaLock,
   FaHeadset,
@@ -46,12 +45,12 @@ const Cart = () => {
   }
 
   return (
-    <section className="bg-[#faf7f2] min-h-screen py-8 px-2">
+    <section className="bg-[#faf7f2] min-h-screen py-6 px-2">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
 
         {/* CART ITEMS */}
         <div className="lg:col-span-2 space-y-6">
-          <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+          <h2 className="text-xl sm:text-xl font-bold text-gray-900">
             Shopping Cart ({totalQuantity} items)
           </h2>
           
@@ -60,14 +59,14 @@ const Cart = () => {
           {cartItems.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-2xl shadow-md p-4 flex flex-col sm:flex-row gap-4"
+              className="bg-white rounded-xl shadow-md p-2 flex flex-col sm:flex-row gap-3"
             >
               {/* Image */}
               <img
                 src={item.image}
                 alt={item.name}
                 onClick={() => navigate(`/products/${item.id}`)}
-                className="w-full sm:w-24 h-40 sm:h-24 object-cover rounded-xl cursor-pointer border border-yellow-500"
+                className="w-full sm:w-19 h-20 sm:h-19 object-cover rounded-xl cursor-pointer "
               />
 
               {/* Product Info */}
@@ -83,7 +82,7 @@ const Cart = () => {
                 <div className="flex items-center gap-3 mt-3">
                   <button
                     onClick={() => decreaseQty(item.id)}
-                    className="p-3 sm:p-2 rounded-full border hover:bg-gray-100"
+                    className="p-2 sm:p-1 rounded-full border hover:bg-gray-100"
                   >
                     <FaMinus size={12} />
                   </button>
@@ -92,7 +91,7 @@ const Cart = () => {
 
                   <button
                     onClick={() => increaseQty(item.id)}
-                    className="p-3 sm:p-2 rounded-full border hover:bg-gray-100"
+                    className="p-2 sm:p-1 rounded-full border hover:bg-gray-100"
                   >
                     <FaPlus size={12} />
                   </button>
@@ -133,20 +132,11 @@ const Cart = () => {
             </span>
           </div>
 
-          {/* Delivery */}
-          <div className="flex justify-between text-gray-700 mb-2">
-            <span className="flex items-center gap-2">
-              <FaTruck className="text-gray-400" />
-              Delivery
-            </span>
-            <span className="text-green-600 font-semibold">FREE</span>
-          </div>
-
-          {/* Handling Fee */}
+          {/* Delivery Fee */}
           <div className="flex justify-between text-gray-700 mb-4">
             <span className="flex items-center gap-2">
               <FaTools className="text-gray-400" />
-              Handling Fee
+              Delivery Fee
             </span>
             <span>NPR 500</span>
           </div>
