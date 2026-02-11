@@ -137,7 +137,7 @@ const Contact = () => {
                         transition-all duration-300 hover:scale-[1.02]">
           <iframe
             title="Binod Jewellers Location"
-            src="https://www.google.com/maps?q=Netachowk,Morang,Nepal&output=embed"
+             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d585.0402470449784!2d87.36330023733184!3d26.58881127360776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6f81ed17e795%3A0x194cb6001a33a819!2sOm%20new%20Shree%20mahalaxmi%20jewellery!5e0!3m2!1sen!2snp!4v1770818087645!5m2!1sen!2snp" 
             className="w-full h-72 md:h-96"
             loading="lazy"
           ></iframe>
