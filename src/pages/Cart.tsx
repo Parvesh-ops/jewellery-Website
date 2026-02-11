@@ -49,7 +49,7 @@ const Cart = () => {
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
 
         {/* CART ITEMS */}
-        <div className="lg:col-span-2 space-y-6">
+        <div className="lg:col-span-2 space-y-4">
           <h2 className="text-xl sm:text-xl font-bold text-gray-900">
             Shopping Cart ({totalQuantity} items)
           </h2>
@@ -59,14 +59,14 @@ const Cart = () => {
           {cartItems.map((item) => (
             <div
               key={item.id}
-              className="bg-white rounded-xl shadow-md p-2 flex flex-col sm:flex-row gap-3"
+              className="bg-white p-2 rounded-2xl flex justify-between items-center text-gray-700 gap-2"
             >
               {/* Image */}
               <img
                 src={item.image}
                 alt={item.name}
                 onClick={() => navigate(`/products/${item.id}`)}
-                className="w-full sm:w-19 h-20 sm:h-19 object-cover rounded-xl cursor-pointer "
+                className="w-16 h-16 object-cover rounded-md border border-gray-300 cursor-pointer "
               />
 
               {/* Product Info */}

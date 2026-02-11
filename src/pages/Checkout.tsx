@@ -39,7 +39,6 @@ const Checkout = () => {
       newErrors.phone = "Phone number must be 10 digits";
     if (!form.city.trim()) newErrors.city = "City is required";
     if (!form.district.trim()) newErrors.district = "District is required";
-    if (!form.landmark.trim()) newErrors.landmark = "Landmark is required";
     if (!form.address.trim()) newErrors.address = "Full address is required";
 
     setErrors(newErrors);
@@ -76,9 +75,12 @@ const Checkout = () => {
   return (
     <section className="bg-[#faf7f2] py-10 px-4">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-3 gap-8">
-
-        {/* LEFT SIDE: Form */}
+         
+        {/*  Form */}
         <div className="lg:col-span-2 space-y-6">
+           <h2 className="text-xl sm:text-2xl font-bold text-gray-900">
+           Checkout
+          </h2>
           
           {/* 1. General Info */}
           <div className="bg-white rounded-2xl shadow-lg p-6 space-y-4">
@@ -162,21 +164,7 @@ const Checkout = () => {
                 {errors.district && <p className="text-red-500 text-xs mt-1">{errors.district}</p>}
               </div>
 
-              <div className="flex flex-col">
-                <label htmlFor="landmark" className="text-sm font-bold mb-1">Landmark</label>
-                <input
-                  id="landmark"
-                  type="text"
-                  name="landmark"
-                  placeholder="Enter landmark"
-                  className={`${inputClass} ${errors.landmark ? "border-red-500" : ""}`}
-                  value={form.landmark}
-                  onChange={handleChange}
-                />
-                {errors.landmark && <p className="text-red-500 text-xs mt-1">{errors.landmark}</p>}
-              </div>
-
-              <div className="flex flex-col">
+               <div className="flex flex-col">
                 <label htmlFor="address" className="text-sm font-bold mb-1">Full Address</label>
                 <input
                   id="address"
@@ -187,6 +175,20 @@ const Checkout = () => {
                   onChange={handleChange}
                 />
                 {errors.address && <p className="text-red-500 text-xs mt-1">{errors.address}</p>}
+              </div>
+
+              <div className="flex flex-col">
+                <label htmlFor="landmark" className="text-sm font-bold mb-1">Landmark</label>
+                <input
+                  id="landmark"
+                  type="text"
+                  name="landmark"
+                  placeholder="Enter landmark"
+                  className={`${inputClass} `}
+                  value={form.landmark}
+                  onChange={handleChange}
+                />
+                {errors.landmark && <p className="text-red-500 text-xs mt-1">{errors.landmark}</p>}
               </div>
             </div>
           </div>

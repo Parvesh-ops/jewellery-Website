@@ -1,46 +1,60 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import type { Product } from "../types/product";
 
 interface FavoriteContextType {
-    favorites: Product[];
-    addToFavorites: (product: Product) => void;
-    removeFromFavorites: (id: number) => void;
-    isFavorite: (id: number) => boolean;
+  favorites: Product[];
+  addToFavorites: (product: Product) => void;
+  removeFromFavorites: (id: number) => void;
+  isFavorite: (id: number) => boolean;
 }
 
 const FavoriteContext = createContext<FavoriteContextType | null>(null);
 
 export const FavoriteProvider = ({ children }: { children: React.ReactNode }) => {
-    const [favorites, setFavorites] = useState<Product[]>([]);
+  //  Load favorites from localStorage
+  const [favorites, setFavorites] = useState<Product[]>(() => {
+    const stored = localStorage.getItem("favorites");
+    return stored ? JSON.parse(stored) : [];
+  });
 
-    //add Favorites
-    const addToFavorites = (product: Product) => {
-        setFavorites((prev) =>
-            prev.find((item) => item.id === product.id) ? prev : [...prev, product])
-    };
+  //  Save to localStorage whenever favorites change
+  useEffect(() => {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }, [favorites]);
 
-    //remove from favorites
-    const removeFromFavorites = (id: number) => {
-        setFavorites((prev) => prev.filter((item) => item.id !== id));
-    };
+  //  Add to favorites (no duplicates)
+  const addToFavorites = (product: Product) => {
+    setFavorites((prev) =>
+      prev.some((item) => item.id === product.id)
+        ? prev
+        : [...prev, product]
+    );
+  };
 
-    const isFavorite = (id: number) => {
-        return favorites.some((item) => item.id === id);
-    };
+  //  Remove from favorites
+  const removeFromFavorites = (id: number) => {
+    setFavorites((prev) => prev.filter((item) => item.id !== id));
+  };
 
+  //  Check favorite
+  const isFavorite = (id: number) => {
+    return favorites.some((item) => item.id === id);
+  };
 
-    return (
-        <FavoriteContext.Provider value={{ favorites, addToFavorites, removeFromFavorites, isFavorite }}>
-            {children}
-        </FavoriteContext.Provider>
-    )
-}
+  return (
+    <FavoriteContext.Provider
+      value={{ favorites, addToFavorites, removeFromFavorites, isFavorite }}
+    >
+      {children}
+    </FavoriteContext.Provider>
+  );
+};
 
-//custom hooks
+// ✅ Custom Hook
 export const useFavorite = () => {
-    const context = useContext(FavoriteContext)
-    if (!context) {
-        throw new Error("useCart must be used within CartProvider");
-    }
-    return context;
+  const context = useContext(FavoriteContext);
+  if (!context) {
+    throw new Error("useFavorite must be used within FavoriteProvider");
+  }
+  return context;
 };
