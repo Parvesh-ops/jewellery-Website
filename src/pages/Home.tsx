@@ -1,4 +1,5 @@
 import BestSeller from "../components/BestSeller/BestSeller"
+import CallToAction from "../components/CallToAction/CallToAction"
 import Carousel from "../components/Carousel/Carousel"
 import Category from "../components/Category/Category"
 import CustomerTestimonials from "../components/Testimonials/Testimonials"
@@ -12,6 +13,7 @@ const Home = () => {
       <BestSeller />
       <Category />
       <WhyChooseUs />
+      <CallToAction />
       <CustomerTestimonials />
     </div>
   )
