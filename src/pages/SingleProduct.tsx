@@ -138,10 +138,7 @@ const SingleProduct = () => {
                             <IoCartOutline /> Add to Cart
                         </button>
 
-                        <button
-                            className="flex items-center gap-2 text-sm bg-yellow-500 text-black px-3 py-1.5 rounded-full hover:bg-yellow-600 transition">
-                            💳 Buy Now
-                        </button>
+                       
                     </div>
                 </div>
             </div>

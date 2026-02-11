@@ -13,6 +13,8 @@ const Header = () => {
   const { cartItems } = useCart();
   const { favorites } = useFavorite();
 
+  const totalQty = cartItems.reduce((sum, item) => sum + item.quantity, 0);
+
   const navLinkClass = ({ isActive }: { isActive: boolean }) =>
     `block px-4 py-2 text-sm font-semibold transition-colors duration-200
      ${isActive
@@ -39,17 +41,22 @@ const Header = () => {
           {/* Favorite */}
           <Link to="/favorite" className="relative text-black hover:text-yellow-500">
             <GrFavorite className="h-6 w-6" />
-            <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
-              {favorites.length}
-            </span>
+            {favorites.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
+                {favorites.length}
+              </span>
+            )}
+
           </Link>
 
           {/* Cart */}
           <Link to="/cart" className="relative text-black hover:text-yellow-500">
             <IoCartOutline className="h-6 w-6" />
-            <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
-              {cartItems.length}
-            </span>
+            {totalQty > 0 && (
+              <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
+                {totalQty}
+              </span>
+            )}
           </Link>
         </div>
 
@@ -80,16 +87,20 @@ const Header = () => {
         <div className="md:hidden flex items-center gap-4">
           <Link to="/favorite" className="relative text-black">
             <GrFavorite className="h-6 w-6" />
-            <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
-              {favorites.length}
-            </span>
+            {favorites.length > 0 && (
+              <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
+                {favorites.length}
+              </span>
+            )}
           </Link>
 
           <Link to="/cart" className="relative text-black">
             <IoCartOutline className="h-6 w-6" />
-            <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
-              {cartItems.length}
-            </span>
+            {totalQty > 0 && (
+              <span className="absolute -top-2 -right-2 bg-yellow-500 text-black text-xs px-1.5 rounded-full">
+                {totalQty}
+              </span>
+            )}
           </Link>
 
           <button onClick={() => setOpen(!open)} className="text-black">
