@@ -6,7 +6,7 @@ Built with **React**, **TypeScript**, and **Tailwind CSS**, it is inspired by gl
 
 ---
 ## Link
-https://jewellery-website-teal-nine.vercel.app/
+https://jewellery-website-ba7z.vercel.app/
 
 ---
 
