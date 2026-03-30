@@ -70,7 +70,7 @@ const Checkout = () => {
     );
   }
 
-  const inputClass = "border border-gray-300 rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400";
+  const inputClass = "border border-gray-300  rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400";
 
   return (
     <section className="bg-[#faf7f2] py-10 px-4">
@@ -88,7 +88,7 @@ const Checkout = () => {
             <div className="grid md:grid-cols-2 gap-4">
 
               <div className="flex flex-col">
-                <label htmlFor="name" className="text-sm font-medium mb-1">Full Name</label>
+                <label htmlFor="name" className="text-sm font-bold mb-1">Full Name</label>
                 <input
                   id="name"
                   type="text"
@@ -116,7 +116,7 @@ const Checkout = () => {
               </div>
 
               <div className="flex flex-col md:col-span-2">
-                <label htmlFor="phone" className="text-sm font-bold mb-1">Phone Number</label>
+                <label htmlFor="phone" className="text-sm my-3 font-bold mb-1">Phone Number</label>
                 <input
                   id="phone"
                   type="text"
