@@ -2,11 +2,10 @@
 import { useFavorite } from "../context/FavoriteContext";
 import { MdOutlineFavorite } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
-import { useToast } from "../context/ToastContext";
+import toast from "react-hot-toast";
 
 const Favorite = () => {
     const { favorites, removeFromFavorites } = useFavorite();
-    const { showToast } = useToast();
     const navigate = useNavigate();
 
     if (favorites.length === 0) {
@@ -64,7 +63,7 @@ const Favorite = () => {
                                     <button
                                         onClick={() => {
                                             removeFromFavorites(item.id)
-                                            showToast('remove from wishlist!!')
+                                            toast.success('removed from wishlist!!')
                                         }}
                                         className="flex items-center gap-2 text-red-500 font-semibold hover:text-red-600 transition"
                                     >

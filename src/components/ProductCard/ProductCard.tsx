@@ -5,7 +5,7 @@ import type { Product } from "../../types/product";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../context/CartContext";
 import { useFavorite } from "../../context/FavoriteContext";
-import { useToast } from "../../context/ToastContext";
+import toast from "react-hot-toast";
 
 interface ProductProps {
     product: Product;
@@ -15,7 +15,6 @@ const ProductCard = ({ product }: ProductProps) => {
     const navigate = useNavigate() // for singleProduct
 
     const { addToCart } = useCart();
-    const { showToast } = useToast();
     const { favorites, addToFavorites, removeFromFavorites } = useFavorite();
     const isFavorite = favorites.find(
         (item) => item.id === product?.id
@@ -45,7 +44,7 @@ const ProductCard = ({ product }: ProductProps) => {
                     <button
                         onClick={() => {
                             addToCart(product)
-                            showToast(`✔ added to cart!!`);
+                            toast.success(`added to cart!!`);
                         }}
                         className="flex items-center gap-1 text-xs sm:text-sm 
                          bg-yellow-500 text-black px-2 sm:px-3 py-1.5 
@@ -60,10 +59,10 @@ const ProductCard = ({ product }: ProductProps) => {
                             onClick={() => {
                                 if (isFavorite) {
                                     removeFromFavorites(product.id);
-                                    showToast(` removed from wishlist!`);
+                                    toast.success(`removed from wishlist!`);
                                 } else {
                                     addToFavorites(product);
-                                    showToast(`✔added to wishlist!`);
+                                    toast.success(`added to wishlist!`);
                                 }
                             }}
                             className={`transition text-xl ${isFavorite ? "text-red-500" : "text-gray-600 hover:text-red-500"

@@ -7,7 +7,7 @@ import Breadcrums from "../components/Breadcrums/Breadcrums";
 import { useCart } from "../context/CartContext";
 import { GrFavorite } from "react-icons/gr";
 import { useFavorite } from "../context/FavoriteContext";
-import { useToast } from "../context/ToastContext";
+import toast from "react-hot-toast";
 
 const SingleProduct = () => {
     const { id } = useParams<string>(); // for single product 
@@ -16,7 +16,6 @@ const SingleProduct = () => {
     const [quantity, setQuantity] = useState(1);
 
     const { addToCart } = useCart();
-    const { showToast } = useToast();
     const { favorites, addToFavorites, removeFromFavorites } = useFavorite();
     const isFavorite = favorites.find(
         (item) => item.id === singleProduct?.id
@@ -111,10 +110,10 @@ const SingleProduct = () => {
                             onClick={() => {
                                 if (isFavorite) {
                                     removeFromFavorites(singleProduct.id);
-                                    showToast(` removed from wishlist!`);
+                                    toast.success(`removed from wishlist!`);
                                 } else {
                                     addToFavorites(singleProduct);
-                                    showToast(`✔added to wishlist!`);
+                                    toast.success(`added to wishlist!`);
                                 }
                             }}
                             className={`transition text-xl ${isFavorite ? "text-red-500" : "text-gray-600 hover:text-red-500"
@@ -131,7 +130,7 @@ const SingleProduct = () => {
                         <button
                             onClick={() => {
                                 addToCart(singleProduct)
-                                showToast(`✔ added to cart!!`)
+                                toast.success(`added to cart!!`)
                             }}
                             className="flex items-center gap-2 text-sm bg-yellow-500 text-black px-3 py-1.5 rounded-full hover:bg-yellow-600 transition"
                         >

@@ -1,4 +1,3 @@
-
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
@@ -15,7 +14,7 @@ if (!PUBLISHABLE_KEY) {
 import { DataProvider } from './context/DataContext.tsx'
 import { CartProvider } from './context/CartContext.tsx'
 import { FavoriteProvider } from './context/FavoriteContext.tsx'
-import { ToastProvider } from './context/ToastContext.tsx'
+import { Toaster } from 'react-hot-toast'
 
 
 createRoot(document.getElementById('root')!).render(
@@ -23,13 +22,10 @@ createRoot(document.getElementById('root')!).render(
   <DataProvider>
     <CartProvider>
       <FavoriteProvider>
-        <ToastProvider>
+          <Toaster position="top-right" reverseOrder={false} />
           <App />
-        </ToastProvider>
       </FavoriteProvider>
     </CartProvider>
   </DataProvider>
 </ClerkProvider>
-
-
 )
