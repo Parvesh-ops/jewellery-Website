@@ -8,6 +8,7 @@ import { useCart } from "../context/CartContext";
 import { GrFavorite } from "react-icons/gr";
 import { useFavorite } from "../context/FavoriteContext";
 import toast from "react-hot-toast";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const SingleProduct = () => {
     const { id } = useParams<string>(); // for single product 
@@ -119,7 +120,7 @@ const SingleProduct = () => {
                             className={`transition text-xl ${isFavorite ? "text-red-500" : "text-gray-600 hover:text-red-500"
                                 }`}
                         >
-                            <GrFavorite />
+                            {isFavorite ? <AiFillHeart /> : <AiOutlineHeart />}
                         </button>
 
 

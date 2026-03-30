@@ -1,5 +1,5 @@
 
-import { GrFavorite } from "react-icons/gr";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { IoCartOutline } from "react-icons/io5";
 import type { Product } from "../../types/product";
 import { useNavigate } from "react-router-dom";
@@ -55,21 +55,21 @@ const ProductCard = ({ product }: ProductProps) => {
                     </button>
 
 
-                        <button
-                            onClick={() => {
-                                if (isFavorite) {
-                                    removeFromFavorites(product.id);
-                                    toast.success(`removed from wishlist!`);
-                                } else {
-                                    addToFavorites(product);
-                                    toast.success(`added to wishlist!`);
-                                }
-                            }}
-                            className={`transition text-xl ${isFavorite ? "text-red-500" : "text-gray-600 hover:text-red-500"
-                                }`}
-                        >
-                            <GrFavorite />
-                        </button>
+                    <button
+                        onClick={() => {
+                            if (isFavorite) {
+                                removeFromFavorites(product.id);
+                                toast.success(`removed from wishlist!`);
+                            } else {
+                                addToFavorites(product);
+                                toast.success(`added to wishlist!`);
+                            }
+                        }}
+                        className={`transition cursor-pointer duration-200 ${isFavorite ? "text-red-500 scale-110" : "text-gray-600"
+                            }`}>
+                        {isFavorite ? <AiFillHeart /> : <AiOutlineHeart />}
+
+                    </button>
                 </div>
             </div>
         </div>

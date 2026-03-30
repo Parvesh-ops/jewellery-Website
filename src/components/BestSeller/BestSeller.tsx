@@ -6,6 +6,7 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import { useCart } from "../../context/CartContext";
 import { useFavorite } from "../../context/FavoriteContext";
 import toast from "react-hot-toast";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 const BestSeller = () => {
     const { data } = useData();
@@ -83,12 +84,12 @@ const BestSeller = () => {
                                                     toast.success("Added to wishlist!");
                                                 }
                                             }}
-                                            className={`text-xl transition ${isFavorite
-                                                    ? "text-red-500"
-                                                    : "text-gray-600 hover:text-red-500"
+                                            className={`text-xl transition cursor-pointer ${isFavorite
+                                                ? "text-red-500 scale-110"
+                                                : "text-gray-600 hover:text-red-500"
                                                 }`}
                                         >
-                                            <GrFavorite />
+                                            {isFavorite ? <AiFillHeart /> : <AiOutlineHeart />}
                                         </button>
                                     </div>
                                 </div>
