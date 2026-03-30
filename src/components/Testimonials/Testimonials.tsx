@@ -11,7 +11,7 @@ const CustomerTestimonials = () => {
     }))
   );
 
-  const reviewsToShow = allReviews.slice(0, 6);
+  const reviewsToShow = allReviews.slice(0, 3);
 
   return (
     <section className="bg-[#fff8f0] py-16 px-6">
