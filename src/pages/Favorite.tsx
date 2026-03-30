@@ -45,7 +45,8 @@ const Favorite = () => {
                             <img
                                 src={item.image}
                                 alt={item.name}
-                                className="w-full h-48 object-cover"
+                                onClick={() => navigate(`/products/${item.id}`)}
+                                className="w-full h-48 object-cover cursor-pointer"
                             />
 
                             {/* Product Details */}
@@ -71,12 +72,12 @@ const Favorite = () => {
                                         Remove
                                     </button>
 
-                                    <button
+                                    {/* <button
                                         onClick={() => navigate(`/products/${item.id}`)}
                                         className="bg-yellow-500 text-black px-4 py-2 rounded-full font-semibold hover:bg-yellow-600 transition"
                                     >
                                         View Product
-                                    </button>
+                                    </button> */}
                                 </div>
                             </div>
                         </div>
