@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { useCart } from "../context/CartContext";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Cart = () => {
   const {
@@ -53,7 +54,7 @@ const Cart = () => {
           <h2 className="text-xl sm:text-xl font-bold text-gray-900">
             Shopping Cart ({totalQuantity} items)
           </h2>
-          
+
           <hr className="mb-2" />
 
           {cartItems.map((item) => (
@@ -104,8 +105,11 @@ const Cart = () => {
                   NPR {(item.price * item.quantity).toLocaleString()}
                 </p>
                 <button
-                  onClick={() => removeFromCart(item.id)}
-                  className="text-red-500 hover:text-red-600"
+                  onClick={() => {
+                    removeFromCart(item.id);
+                    toast.success(`removed from cart`);
+                  }}
+                  className="text-red-500 cursor-pointer hover:text-red-600"
                 >
                   <FaTrash />
                 </button>
