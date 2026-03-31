@@ -161,10 +161,10 @@ const Cart = () => {
             </p>
             <p className="flex items-center gap-2">
               <FaHeadset className="text-blue-600" />
-              24×7 Customer Support
+              24*7 Customer Support
             </p>
           </div>
-
+          
           {/* Checkout */}
           <button
             onClick={() => navigate("/checkout")}

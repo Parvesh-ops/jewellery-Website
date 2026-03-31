@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { GrFavorite } from "react-icons/gr";
 import { IoCartOutline } from "react-icons/io5";
 import { useData } from "../../context/DataContext";
 import { HiArrowNarrowRight } from "react-icons/hi";

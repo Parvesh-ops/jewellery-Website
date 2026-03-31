@@ -5,7 +5,6 @@ import { products as productData } from "../data/products";
 import { IoCartOutline } from "react-icons/io5";
 import Breadcrums from "../components/Breadcrums/Breadcrums";
 import { useCart } from "../context/CartContext";
-import { GrFavorite } from "react-icons/gr";
 import { useFavorite } from "../context/FavoriteContext";
 import toast from "react-hot-toast";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
